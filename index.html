@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/validation.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Display Data Json</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 bg-light thumbnail">
+                <div class="message">
+                </div>
+                <form id="data-form" method="POST">
+                    <div class="form-row">
+                        <input type="hidden" name="rowid" id="rowid">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control form-control-sm" name="name" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control form-control-sm" name="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="message">Message</label>
+                            <textarea class="form-control rounded-1 form-control-sm" name="message" id="message" placeholder="Enter message here..."></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control form-control-sm" name="date" id="date">
+                        </div>
+                        <div class="form-group col-sm-10">
+                            <button class="btn btn-primary" id="btn-submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h4>Students Details</h4>
+            <table class="table table-striped" width="80%">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                        <th scope="col" class="date-sort">Date
+                            <i class="fas fa-caret-up"></i>
+                        </th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

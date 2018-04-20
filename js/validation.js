@@ -49,21 +49,30 @@ $(document).ready(function () {
             return false;
         }
     }); //end click function
-
+    var count = 1;
     $(".date-sort").on({
         click: function () {
-            sortBYdate();
+            count++;
+            var sort = '';
+            if (count % 2) {
+                sort = 'ASC';
+            } else {
+                sort = 'DESC';
+            }
+            sortBYdate(sort);
         }
     });
-
     showData();
-
-    function sortBYdate() {
+    function sortBYdate(sort) {
+        //setInterval(function () {
         var table = '';
         $.ajax({
             type: "POST",
             url: "data-sort.php",
             datatype: "json",
+            data: ({
+                sort: sort
+            }),
             success: function (data) {
                 var student = $.parseJSON(data);
                 $.each(student, function (index, value) {
@@ -91,6 +100,7 @@ $(document).ready(function () {
                 });
             }
         });
+        //}, 5 * 1000); //end setInterval        
     }
 
     function showData() {
